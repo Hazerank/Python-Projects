@@ -1,0 +1,136 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container-fluid ">
+
+    <div class="row" style="margin-left: 25px;">
+        <div class="col-lg-1">
+
+        </div>
+        <div class="col-lg-2">
+            <form method="POST" action="/createBook">
+                <fieldset>
+                    <legend>Create Book</legend>
+                    <label for="ISBN">ISBN:</label><br>
+                    <input type="text" name="ISBN" id="ISBN" required minlength="13" maxlength="13" /><br><br>
+                    <label for="Name">Name:</label><br>
+                    <input id="Name" type="text" name="Name" required/><br><br>
+                    <label for="Page">Page:</label><br>
+                    <input type="text" name="Page" id="Page"required/><br><br>
+                    <label for="Genres">Genres:</label><br>
+                    <input type="text" name="Genres" id="Genres"required/><br><br>
+                    <label for="Author">Author:</label><br>
+                    <input type="text" name="Author" id="Author"required/><br><br>
+                    <input type="submit" value="Submit" >
+                </fieldset> <br><br>
+            </form>
+            <form method="POST" action="/deleteBook">
+                <fieldset>
+                    <legend>Delete Book</legend>
+                    <label for="ISBN">ISBN:</label><br>
+                    <input type="text" name="ISBN" id="ISBN"required minlength="13" maxlength="13"/><br><br>
+                    <input type="submit" value="Delete" >
+                </fieldset>
+
+            </form>
+        </div>
+        <div class="col-lg-2">
+            <form method="POST" action="/searchBook">
+                <fieldset>
+                    <legend>Search Book</legend>
+                    <label for="ISBN">ISBN:</label><br>
+                    <input type="text" name="ISBN" id="ISBN" minlength="13" maxlength="13"/><br><br>
+                    <label for="Name">Name:</label><br>
+                    <input id="Name" type="text" name="Name" /><br><br>
+                    <label for="Page_Min">Page Number Min Value:</label><br>
+                    <input type="text" name="Page_Min" id="Page_Min"/><br><br>
+                    <label for="Page_Max">Page Number Max Value:</label><br>
+                    <input type="text" name="Page_Max" id="Page_Max"/><br><br>
+                    <label for="Genres">Genres:</label><br>
+                    <input type="text" name="Genres" id="Genres"/><br><br>
+                    <label for="Author">Author:</label><br>
+                    <input type="text" name="Author" id="Author"/><br><br>
+                    <input type="submit" value="Search" ><br>
+                </fieldset>
+            </form>
+        </div>
+        <div class="col-lg-2">
+            <form method="POST" action="/borrowBook">
+
+                <fieldset>
+                    <legend>Borrow Book</legend>
+                    <label for="TC_Num">Tc Number of Borrower:</label><br>
+                    <input type="text" name="TC_Num" id="TC_Num"required minlength="11" maxlength="11"/><br><br>
+                    <label for="ISBN">ISBN of Book:</label><br>
+                    <input type="text" name="ISBN" id="ISBN"required minlength="13" maxlength="13"/><br><br>
+                    <input type="submit" value="Borrow"><br><br>
+                </fieldset>
+            </form> <br><br>
+            <form method="POST" action="/returnBook">
+
+                <fieldset>
+                    <legend>Return Book</legend>
+                    <label for="ISBN">ISBN of Book:</label><br>
+                    <input type="text" name="ISBN" id="ISBN"required minlength="13" maxlength="13"/><br><br>
+                    <input type="submit" value="Return"><br><br>
+                </fieldset>
+            </form>
+            
+        </div>
+       
+        <div class="col-lg-2">
+            <form method="POST" action="/borrowerControl" target="_top">
+                <fieldset>
+                    <legend>Control My Info</legend>
+                    <label for="TC_Num">Tc Number of Borrower:</label><br>
+                    <input type="text" name="TC_Num" id="TC_Num" required minlength="11" maxlength="11"//><br><br>
+                    <input type="submit" value="Control">
+                </fieldset><br><br>
+            </form>
+            <form method="POST" action="/register">
+                <fieldset>
+                    <legend>Register</legend>
+                    
+                    <label for="TC_Num">Tc Number of Borrower:</label><br>
+                    <input type="text" name="TC_Num" id="TC_Num" required minlength="11" maxlength="11"//><br><br>
+                    <label for="Name">Full Name:</label><br>
+                    <input id="Name" type="text" name="Name" required/><br><br>
+                    <input type="submit" value="Register"><br><br>
+                </fieldset>
+            </form>
+        </div>
+        <div class="col-lg-2">
+           
+            <form method="POST" action="/listAllBooks">
+                <fieldset>
+                    <legend>List of all Books</legend>
+                    <input type="submit" value="List"><br><br>
+
+                </fieldset>
+            </form>
+            <form method="POST" action="/listAvailableBooks">
+                <fieldset>
+                    <legend>List of available Books</legend>
+                    <input type="submit" value="List"><br><br>
+
+                </fieldset>
+            </form>
+            <form method="POST" action="/listUsers">
+                <fieldset>
+                    <legend>List of all Users</legend>
+                    <input type="submit" value="List"><br><br>
+
+                </fieldset>
+            </form>
+        </div>
+        <div class="col-lg-1">
+            
+        </div>
+        
+        
+        
+    </div>
+    </div>
+    
+    
+    {% endblock %}

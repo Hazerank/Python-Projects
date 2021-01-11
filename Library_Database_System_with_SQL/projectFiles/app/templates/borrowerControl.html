@@ -1,0 +1,30 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container flex flex center">
+
+    {% if error %}
+    <h3> There exist no list of books because <br><br> <b> {{ error }} </b> <br><br> Return <a href="/index"> Main Page </a></h3>
+    {% else %}
+    <h3>Borrower {{ info[1] }} has {{ info[0]}} books:</h3> <br><br>
+    <table border = 3 >
+        <tr>
+            <td style="padding: 15px;background-color: #b0feff;"> Book ISBN </td>
+            <td style="padding: 15px;background-color: #b0feff;"> Book Name </td>
+            <td style="padding: 15px;background-color: #b0feff;"> Due Date </td>
+          </tr>
+        {% for row in values %}
+        <tr>
+          <td style="padding: 15px;background-color: #ebffff;"> {{row[0]}} </td>
+          <td style="padding: 15px;background-color: #ebffff;"> {{row[1]}} </td>
+          <td style="padding: 15px;background-color: #ebffff;"> {{row[2]}} </td>
+        </tr>
+        {% endfor %}
+      </table>
+
+    <br><br> Return  <a href="/index">Main Page </a>
+    {% endif %}
+        
+    </div>
+    
+    {% endblock %}

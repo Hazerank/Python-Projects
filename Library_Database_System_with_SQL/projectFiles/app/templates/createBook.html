@@ -1,0 +1,14 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container flex flex center">
+
+    {% if error %}
+    <h3> There is an error occured. Please investigate it and then retry : <br><br> {{ error }}  <br><br> Return <a href="/index"> Main Page </a></h3>
+    {% else %}
+    <h3>Creation done successfully ! <br><br> Return  <a href="/index">Main Page </a> </h3>
+    {% endif %}
+        
+    </div>
+    
+    {% endblock %}
